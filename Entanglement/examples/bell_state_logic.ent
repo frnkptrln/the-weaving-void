@@ -1,0 +1,12 @@
+# Entanglement Example: Output 'Q' (81)
+| (Alice, Bob)
+~ (Alice, Bob, DOUBLE) # Bob = 2 * Alice (Bob += 2*dA, Alice += dB//2)
+
+# Set Alice to 40, Bob becomes 80
++ (Alice, 40)
+
+# Increment Bob by 1 (Alice stays 40 due to integer division 1//2=0)
++ (Bob, 1)
+
+# Measure Bob: Outputs 'Q' (81)
+! (Bob)

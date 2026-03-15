@@ -1,0 +1,26 @@
+# Distaff Program: Weave 'A' (ASCII 65)
+# Logical: cell[0] = 13, cell[0] * 5 = 65 -> cell[1], output cell[1]
+
+# Set cell 0 to 13 (Sharpen x 13)
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C
+
+# Start Loop (while cell 0 != 0)
+[ c-d-e-f _
+    # Move to cell 1 (Appear)
+    c-e-g-C
+    
+    # Increment cell 1 by 5 (Sharpen x 5)
+    g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+    
+    # Return to cell 0 (Disappear)
+    C-g-e-c
+    
+    # Decrement cell 0 (Blunt)
+    C-b-a-g
+_ f-e-d-c ]
+
+# Move to cell 1 and Output (Hear)
+c-e-g-C
+d-f-a-c

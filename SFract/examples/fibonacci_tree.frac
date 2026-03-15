@@ -1,0 +1,9 @@
+Iterations: 1
+Axiom: A [ F +++ B - ] F ++ !
+Rule: A=+++++++++++++++++++++++++++
+---
+# S-Fract Program: Output 'S' (ASCII 83)
+# 1. Set parent node to 27 (via Rule A)
+# 2. Loop 27 times: add 3 to child node
+# 3. Add 2 more to child node
+# 4. Output child node (27 * 3 + 2 = 83)
