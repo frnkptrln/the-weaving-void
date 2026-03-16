@@ -8,11 +8,11 @@ Every language in this collection is theoretically Turing Complete and serves as
 
 | Language | Concept | Status |
 | :--- | :--- | :--- |
-| **[Distaff](./Distaff)** | Musical weaving via 4-note sequences. | In Progress |
-| **[Vortex](./Vortex)** | High-speed Brainfuck successor with memory warping. | Pending |
-| **[MandelMemory](./MandelMemory)** | Chaos-driven navigation on the Mandelbrot set. | Pending |
-| **[SFract](./SFract)** | Biological "seed" growth via L-Systems. | Pending |
-| **[Entanglement](./Entanglement)** | Quantum-inspired linked logic pairs. | Pending |
+| **[Distaff](./Distaff)** | Musical weaving via 4-note sequences. | Stable |
+| **[Vortex](./Vortex)** | High-speed Brainfuck successor with memory warping. | Implemented |
+| **[MandelMemory](./MandelMemory)** | Chaos-driven navigation on the Mandelbrot set. | Implemented |
+| **[SFract](./SFract)** | Biological "seed" growth via L-Systems. | Implemented |
+| **[Entanglement](./Entanglement)** | Quantum-inspired linked logic pairs. | Implemented |
 
 ## Core Implementation Principles
 
