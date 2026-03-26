@@ -13,13 +13,13 @@ Explore the distinct paradigms we've discovered and documented:
 | Language | Paradigm & Concept | Status |
 | :--- | :--- | :--- |
 | **[Distaff](./Distaff)** | Musical weaving via 4-note auditory sequences. | Stable |
-| **[Vortex](./Vortex)** | High-speed Brainfuck successor with automated memory warping and nested logic. | Implemented |
-| **[MandelMemory](./MandelMemory)** | Chaos-driven navigation mapped on the Mandelbrot set. | Implemented |
-| **[SFract](./SFract)** | Biological "seed" growth and mutation via L-Systems. | Implemented |
-| **[Entanglement](./Entanglement)** | Quantum-inspired linked logic pairs with entangled states. | Implemented |
-| **[Gastronomy](./Gastronomy)** | Culinary recipe-based tape programming, utilizing ingredients and cooking actions. | Implemented |
-| **[Clockwork](./Clockwork)** | Steampunk-inspired register machine with multi-cog synchronization. | Implemented |
-| **[Bloom](./Bloom)** | Constraint-based continuous simulation, free-energy minimization, and substrate vetos. | Implemented |
+| **[Vortex](./Vortex)** | High-speed Brainfuck successor with automated memory warping and nested logic. | Stable |
+| **[MandelMemory](./MandelMemory)** | Chaos-driven navigation mapped on the Mandelbrot set. | Stable |
+| **[SFract](./SFract)** | Biological "seed" growth and mutation via L-Systems. | Stable |
+| **[Entanglement](./Entanglement)** | Quantum-inspired linked logic pairs with entangled states. | Stable |
+| **[Gastronomy](./Gastronomy)** | Culinary recipe-based tape programming, utilizing ingredients and cooking actions. | Stable |
+| **[Clockwork](./Clockwork)** | Steampunk-inspired register machine with multi-cog synchronization. | Stable |
+| **[Bloom](./Bloom)** | Constraint-based continuous simulation, free-energy minimization, and substrate vetos. | Stable |
 
 ## Core Implementation Principles
 
