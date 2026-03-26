@@ -1,0 +1,55 @@
+# Clockwork/examples/fibonacci.clk
+# Generates the first 10 Fibonacci numbers and prints them
+
+# Initialize n = 10 (Register 0)
+COG 0
+SET 10
+
+# Initialize a = 0 (Register 1)
+COG 1
+SET 0
+
+# Initialize b = 1 (Register 2)
+COG 2
+SET 1
+
+MARK loop_start
+
+# Print a
+COG 1
+RING
+
+# Print a space: ASCII 32
+COG 4
+SET 32
+CHIME
+
+# Calculate c = a + b (in Register 3)
+# c = a
+COG 3
+SET 0
+CONNECT 1
+# c = c + b
+CONNECT 2
+
+# a = b
+COG 1
+SET 0
+CONNECT 2
+
+# b = c
+COG 2
+SET 0
+CONNECT 3
+
+# n = n - 1
+COG 0
+UNWIND
+
+# If n != 0, repeat loop
+SPRING loop_start
+
+# Print a newline at the end
+COG 4
+SET 10
+CHIME

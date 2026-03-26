@@ -1,0 +1,38 @@
+# multiply.vtx
+# This program demonstrates multiplication using nested loops in Vortex.
+# It multiplies 5 and 13 to produce 65, which is the ASCII value for 'A'.
+
+# Initialize C0 = 5
+^^^^^
+
+# Initialize C1 = 13
+> ^^^^^^^^^^^^^
+
+# Move back to C0
+<
+
+# Main loop: while C0 != 0
+⟪
+  # Move to C1
+  >
+  
+  # Inner loop 1: Add C1 to C2 and C3, while zeroing C1
+  ⟪
+    > ^     # C2++
+    > ^     # C3++
+    << v    # C1--, repeat
+  ⟫
+  
+  # Inner loop 2: Move C2 back to C1 to restore it
+  >
+  ⟪
+    < ^     # C1++
+    > v     # C2--, repeat
+  ⟫
+  
+  # Move back to C0 and decrement
+  << v
+⟫
+
+# Move to C3 (the result) and Output it ('A')
+>>> !

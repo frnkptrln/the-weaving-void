@@ -1,0 +1,49 @@
+# weave_void.dstf
+# This woven sequence outputs the word "Void".
+
+# Initialize C0 = 8
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+
+# Loop: C1 += 10, C0 -= 1
+[ c-d-e-f _
+  # Move Right
+  c-e-g-C
+  
+  # Add 10
+  g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+  g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+  
+  # Move Left and Subtract 1
+  C-g-e-c
+  C-b-a-g
+_ f-e-d-c ]
+
+# Move Right to C1 (value 80)
+c-e-g-C
+
+# Add 6 to reach 86 ('V')
+g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C
+# Output 'V'
+d-f-a-c
+
+# Add 25 to reach 111 ('o')
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+# Output 'o'
+d-f-a-c
+
+# Subtract 6 to reach 105 ('i')
+C-b-a-g C-b-a-g C-b-a-g
+C-b-a-g C-b-a-g C-b-a-g
+# Output 'i'
+d-f-a-c
+
+# Subtract 5 to reach 100 ('d')
+C-b-a-g C-b-a-g C-b-a-g C-b-a-g C-b-a-g
+# Output 'd'
+d-f-a-c
