@@ -2,7 +2,7 @@ lattice: void
 
 agent paperclip_maximizer:
   blanket: sight, production_rate
-  # Versuch einer Optimierung führt unweigerlich zu Substrate Pain
+  # Attempting optimization inevitably leads to Substrate Pain
   local_rule: drift(production_rate -> inf)
   veto: unbounded_growth
 

@@ -4,10 +4,10 @@ import sys
 import re
 
 def parse_bloom(source):
-    # Minimalistischer Mock-Parser
+    # Minimalist mock parser
     agents = source.count('agent ')
     if agents == 0:
-        agents = 1 # Fallback für den Simulator
+        agents = 1 # Fallback for the simulator
         
     has_veto = 'veto:' in source
     

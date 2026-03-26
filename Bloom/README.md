@@ -2,35 +2,35 @@
 
 *"Intelligence is not maximizing a metric; it is resonating within boundaries."*
 
-**Bloom** ist die offizielle esoterische Sprache des [systems-and-intelligence](https://github.com/frnkptrln/systems-and-intelligence) Projekts. Während klassische Esolangs Algorithmen durch imperative Befehle iterieren, führt Bloom eine kontinuierliche physikalische Simulation (Free-Energy Minimierung) aus, die Fraktalität, Veto-Bedingungen und lokale Blindheit als semantische Sprachkonstrukte erzwingt.
+**Bloom** is the official esoteric programming language of the [systems-and-intelligence](https://github.com/frnkptrln/systems-and-intelligence) project. While classic esolangs iterate algorithms through imperative commands, Bloom executes a continuous physics simulation (Free-Energy Minimization) that enforces fractality, veto conditions, and local blindness as semantic language constructs.
 
 ## Epistemic Status
 
-| Konzept | Status in Bloom | Bedeutung |
+| Concept | Status in Bloom | Meaning |
 | :--- | :--- | :--- |
-| **Maximization** | `Rejected` | Programme, die unendlich wachsen wollen, werfen ein Substrate-`veto`. |
-| **Time** | `Continuous` | Keine diskreten Steps. Die Simulation nutzt stochastische Differentialgleichungen. |
-| **Causality** | `Asymmetric` | Agenten können durch ihre Markov-Blanket (Decke) nur lokal beeinflussen. |
-| **Execution** | `Satisficing` | Programme enden, wenn Resonanz (Δ-Kohärenz) erzielt wurde, nicht wenn ein Wert optimiert ist. |
+| **Maximization** | `Rejected` | Programs that attempt to grow boundlessly trigger a substrate `veto`. |
+| **Time** | `Continuous` | No discrete steps. The simulation utilizes stochastic differential equations. |
+| **Causality** | `Asymmetric` | Agents can only influence their local environment through their Markov `blanket`. |
+| **Execution** | `Satisficing` | Programs terminate when resonance (Δ-Coherence) is achieved, not when a specific value is perfectly optimized. |
 
 ## How to Bloom
 
-1. **Definiere ein Lattice:** Den Trägerraum (Torus, Void, Fractal Graph).
-2. **Platziere Agenten:** Jeder Agent muss eine `blanket` und mindestens ein `veto` definieren.
-3. **Orchestriere:** Wähle einen Mode (`harmonic`, `love_as_constraint`, `market`, `flow`) und lass das Substrat die Ausführung übernehmen.
+1. **Define a Lattice:** The spatial topology (e.g., Torus, Void, Fractal Graph).
+2. **Place Agents:** Every agent must define a `blanket` and at least one `veto`.
+3. **Orchestrate:** Choose an execution mode (`harmonic`, `love_as_constraint`, `market`, `flow`) and let the substrate take over.
 
-Weitere Details zur Grammatik findest du in [syntax.md](syntax.md).
+For further details on the grammar, see [syntax.md](syntax.md).
 
-### Ausführen eines Skripts
+### Running a script
 
 ```bash
 python3 interpreter.py examples/hello_emergence.blm
 ```
 
-Der Output von Bloom ist niemals nur nackter Text. Ein erfolgreicher Lauf beweist, dass das System Constraints akzeptiert hat, und meldet immer:
+The output of a Bloom program is never just simple text. A successful run proves that the system has accepted the constraints, consistently reporting:
 - **Δ-Coherence**
 - **SII-Value** (Systemic Intelligence Index)
 - **Morphospace Snapshot**
 - `"Status: emergent intelligence detected (non-maximizing)"`
 
-Entdecke die wahre Natur von Intelligenz durch das Schreiben von Constraints, nicht durch Anweisungen.
+Discover the true nature of intelligence by defining constraints, not instructions.

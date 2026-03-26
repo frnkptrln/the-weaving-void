@@ -1,6 +1,6 @@
 # The Grammar of Bloom
 
-Die Syntax von Bloom ist eine Mischung aus minimalistischem YAML und esoterischen Zaubersprüchen. Es gibt keine Schleifen (Loops) und keine explizite Zeitsteuerung – die Ausführung ist ein kontinuierlicher dynamischer Prozess (continuous-time simulation), der erst endet, wenn das System in einer kohärenten Homeostase ruht oder durch ein Veto zerstört wird.
+The syntax of Bloom is a blend of minimalist YAML and esoteric incantation. There are no loops and no explicit time control vectors—execution is a continuous dynamic process (continuous-time simulation) that only concludes when the system rests in a coherent homeostasis or is destroyed by a veto.
 
 ## EBNF Specification
 
@@ -26,13 +26,13 @@ veto_expression ::= "pain >" float | "scale_breach" | "unbounded_growth"
 
 ## Keywords & Semantics
 
-- **`lattice`**: Definiert die Topologie des Substrats. Es ist kein Speicher (Memory), sondern der Raum, in dem Agenten kausal interagieren.
-- **`agent`**: Eine autonome Entität.
-- **`blanket`**: Die Markov-Decke des Agenten. Erlaubt nur *lokale* Sichtbarkeit (Sensory) und asymmetrische Einflüsse auf die Welt (Active).
-- **`local_rule`**: Was der Agent lokal anstrebt.
-  - *`drift`*: Wandern entlang lokaler Gradienten des Rauschens.
-  - *`satisfice`*: Suchen nach einem Schwellenwert, nicht nach einem Optimum.
-  - *`resonate`*: Versuchen, die Frequenz an die Nachbarn in der Markov-Decke anzupassen.
-- **`veto`**: Das Kern-Designprinzip des Substrats. Free-Energy wird als *Pain* (Schmerz) gemessen. Bricht ein Constraint, zerstört das Substrat den Agenten (Execution Halted).
-- **`orchestrate`**: Startet die physikbasierte Ausführung.
-- **`love_as_constraint`**: Ein Modus, der lokale Autonomie respektiert, aber durch eine holonische Klammer destruktive Konkurrenz verhindert.
+- **`lattice`**: Defines the topology of the substrate. This is not memory, but rather the space where agents causally interact.
+- **`agent`**: An autonomous entity.
+- **`blanket`**: The Markov blanket of the agent. Dictates local visibility (Sensory) and asymmetric influence on the world (Active). There is no global visibility.
+- **`local_rule`**: What the agent strives for locally.
+  - *`drift`*: Wander along the local gradients of noise.
+  - *`satisfice`*: Search for a threshold value, not an optimum. Once the state is satisfactory, active adjustment ceases.
+  - *`resonate`*: Attempt to match frequency/state variations with neighbors within the Markov blanket.
+- **`veto`**: The core design principle of the substrate. Free energy is measured as *Pain*. If a constraint is breached, the substrate destroys the agent (Execution Halted).
+- **`orchestrate`**: Initializes the physics-based execution cycle.
+- **`love_as_constraint`**: An execution mode that respects local autonomy but prevents competitive destruction through a holonic embrace.
