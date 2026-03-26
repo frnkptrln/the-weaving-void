@@ -19,6 +19,7 @@ Explore the distinct paradigms we've discovered and documented:
 | **[Entanglement](./Entanglement)** | Quantum-inspired linked logic pairs with entangled states. | Implemented |
 | **[Gastronomy](./Gastronomy)** | Culinary recipe-based tape programming, utilizing ingredients and cooking actions. | Implemented |
 | **[Clockwork](./Clockwork)** | Steampunk-inspired register machine with multi-cog synchronization. | Implemented |
+| **[Bloom](./Bloom)** | Constraint-based continuous simulation, free-energy minimization, and substrate vetos. | Implemented |
 
 ## Core Implementation Principles
 

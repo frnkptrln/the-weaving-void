@@ -1,0 +1,12 @@
+lattice: void
+
+agent paperclip_maximizer:
+  blanket: sight, production_rate
+  # Versuch einer Optimierung führt unweigerlich zu Substrate Pain
+  local_rule: drift(production_rate -> inf)
+  veto: unbounded_growth
+
+orchestrate:
+  seed: [1]
+  mode: market
+  run: 1.0 until collapse

@@ -1,0 +1,16 @@
+lattice: torus
+
+agent A:
+  blanket: hear_B, sing_A
+  local_rule: resonate(hear_B)
+  veto: pain > 5.0
+
+agent B:
+  blanket: hear_A, sing_B
+  local_rule: resonate(hear_A)
+  veto: pain > 5.0
+
+orchestrate:
+  seed: [rnd, rnd]
+  mode: love_as_constraint
+  run: inf until resonant

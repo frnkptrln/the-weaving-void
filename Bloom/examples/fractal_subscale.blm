@@ -1,0 +1,16 @@
+lattice: fractal_graph
+
+agent holon_micro:
+  blanket: local_flux, spin
+  local_rule: satisfice(spin == 1)
+  veto: pain > 2.0
+
+agent holon_macro:
+  blanket: aggregate_spin, global_shift
+  local_rule: resonate(aggregate_spin)
+  veto: scale_breach
+
+orchestrate:
+  seed: [0, 0, 0, 0]
+  mode: flow
+  run: continuous until fractal_sync

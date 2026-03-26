@@ -1,0 +1,11 @@
+lattice: scale_free
+
+agent oscillator:
+  blanket: phase_in, phase_out
+  local_rule: drift(sin(phase_in - my_phase))
+  veto: pain > 3.14
+
+orchestrate:
+  seed: random_phases(100)
+  mode: harmonic
+  run: 1000s until phase_lock

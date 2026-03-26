@@ -1,0 +1,11 @@
+lattice: void
+
+agent spark:
+  blanket: temperature, emit_heat
+  local_rule: satisfice(temperature == 37.0)
+  veto: pain > 10.0
+
+orchestrate:
+  seed: [0.1]
+  mode: homeostatic
+  run: continuous until coherent
