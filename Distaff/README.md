@@ -21,10 +21,10 @@ Drafts are 4-note sequences. Reversing the draft reverses the logical action.
 | `d-f-a-c` | **Hear**: Output ASCII character | `c-a-f-d` | **Speak**: Input ASCII character |
 
 ### Loops and Conditionals
-- `_` (Pause) denotes a condition.
-- `[ <Draft> _ ... _ <ReverseDraft> ]` forms a conditional loop.
+- `[` begins a conditional loop.
+- `]` ends a conditional loop.
 - The loop executes while the current cell value is NOT 0.
-- The `<Draft>` and `<ReverseDraft>` must be a matching pair (e.g., `c-d-e-f` and `f-e-d-c`) to define the loop's context, though any notes can be used within the loop.
+- `_` (Pause) is a no-op token used to mark loop rhythm and readability.
 
 ### Syntax Rules
 - Drafts are written as four notes separated by hyphens (e.g., `c-d-e-f`).
@@ -46,20 +46,20 @@ The visualizer generates an ASCII representation of the musical staff notation f
 
 ## Example: weave_A.dstf
 This program produces the character 'A' (ASCII 65).
-```
-g-a-b-C _ g-a-b-C _ C-b-a-g
-# (Note: Complexity of loops is required for Turing Completeness)
-```
-Wait, the loop syntax is `[ <Draft> _ ... _ <ReverseDraft> ]`. Let's refine the "Hello World" example.
-
-To get 'A' (65):
-1. Increment a cell until it reaches 65.
-2. Output the cell.
 
 ```distaff
-c-d-e-f                  # Start
-g-a-b-C g-a-b-C g-a-b-C  # Incrementing... (simpler than a loop for just one char)
-d-f-a-c                  # Output
-f-e-d-c                  # End
+# Set cell 0 to 13, add 5 to cell 1 per loop, then output cell 1.
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+g-a-b-C g-a-b-C g-a-b-C
+
+[ c-d-e-f _
+    c-e-g-C
+    g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+    C-g-e-c
+    C-b-a-g
+_ f-e-d-c ]
+
+c-e-g-C
+d-f-a-c
 ```
-Actually, I'll provide a proper loop-based example in `weave_A.dstf`.

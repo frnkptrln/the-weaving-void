@@ -90,6 +90,8 @@ class SFractInterpreter:
                 start = loop_stack.pop()
                 loop_map[start] = i
                 loop_map[i] = start
+        if loop_stack:
+            raise SyntaxError(f"Unmatched '[' at {loop_stack[-1]}")
         return loop_map
 
 def main():

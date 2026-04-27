@@ -26,7 +26,7 @@ python3 interpreter.py path/to/hello.vtx
 ```
 
 ## Example: hello.vtx
-A classic "Hello World" implementation in Vortex.
+A compact fragment from the full "Hello, World!" example:
 ```vortex
 # H
 ^^^^^^^^ ⟪ > ^^^^^^^^ < v ⟫ > ^ !
@@ -38,4 +38,4 @@ A classic "Hello World" implementation in Vortex.
 ^^^ !
 # ... and so on
 ```
-Wait, the example in `examples/hello.vtx` will be a full "Hello World".
+Run `examples/hello.vtx` for the complete program.

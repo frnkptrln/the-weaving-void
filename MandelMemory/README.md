@@ -18,7 +18,7 @@ Memory operations (writing with `+` or `-`) are only possible if the current poi
 | `+` | **Perturb Up**: Increment the value at the current coordinate $z$ (+1). |
 | `-` | **Perturb Down**: Decrement the value at the current coordinate $z$ (-1). |
 | `!` | **Observe**: Output the value at the current coordinate $z$ as an ASCII character. |
-| `?` | **Fluctuate**: Loop while the value at the current coordinate $z$ is greater than 0. |
+| `[` / `]` | **Fluctuate**: Loop while the value at the current coordinate $z$ is greater than 0. |
 
 ## Usage
 
@@ -33,17 +33,20 @@ python3 visualizer.py path/to/program.mdm
 ```
 The visualizer generates a map showing the coordinates of all variables that were accessed during execution, overlaid on the Mandelbrot set.
 
-## Example: hello_z.mdm
+## Example: hello_mdm.mdm
 ```mandelmemory
-# Move to a stable point and set value
-T(0.1+0.3i)
-+++++ +++++ +++++ +++++
-+++++ +++++ +++++ +++++
-+++++ +++++ +++++ +++++
-+++++ +++++ +++++ +++++ # Set to 80
-! # Output 'P' (example)
+# Build 77 at the stable coordinate 0.1 and output 'M'.
+T(0)
+++++++
+[
+  T(0.1)
+  +++++++++++
+  T(-0.01)
+  -
+]
+T(0.1)
+!
 ```
-Wait, finding stable points that map back to stable points is the challenge!
-An easy one is `T(0)`. $0^2 + 0 = 0$.
-Another is `T(-1)`. $0^2 - 1 = -1 \rightarrow (-1)^2 - 1 = 0 \rightarrow 0^2 - 1 = -1$.
-A cycle of two stable points.
+
+The example uses stable transforms that return to known coordinates:
+`T(0)` keeps the pointer at `0`, and `T(-0.01)` maps `0.1` back to `0`.

@@ -10,7 +10,7 @@ class VortexInterpreter:
         self.loop_map = self.build_loop_map(self.code)
 
     def clean_code(self, code):
-        # Keep only valid Vortex commands
+        code = "\n".join(line.split("#", 1)[0] for line in code.splitlines())
         valid_cmds = "^v><⟪⟫!*"
         return "".join([c for c in code if c in valid_cmds])
 

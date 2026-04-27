@@ -27,8 +27,9 @@ class MandelMemoryVisualizer:
                 inner = t_expr[2:-1].replace('i', 'j')
                 try:
                     c_val = complex(inner)
-                    z = z**2 + c_val
-                except: pass
+                except ValueError as exc:
+                    raise SyntaxError(f"Invalid complex number: {inner}") from exc
+                z = z**2 + c_val
             elif match.group(3) or match.group(4):
                 if abs(z) <= 2:
                     points.append(z)

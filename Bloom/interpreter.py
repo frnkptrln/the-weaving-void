@@ -18,8 +18,9 @@ def parse_bloom(source):
     return agents, has_veto, mode
 
 def free_energy_minimization(num_agents, mode, source_code):
-    # Base simulation vector representing internal agent states
-    state = np.random.rand(num_agents) * 10
+    seed = sum((idx + 1) * ord(char) for idx, char in enumerate(source_code)) % (2**32)
+    rng = np.random.default_rng(seed)
+    state = rng.random(num_agents) * 10
     dt = 0.01
     pain_threshold = 15.0
     
@@ -30,7 +31,7 @@ def free_energy_minimization(num_agents, mode, source_code):
     if 'unbounded_growth' in source_code or 'pain > inf' in source_code:
         # Simulate explosive growth triggering a veto
         for step in range(100):
-            noise = np.random.normal(0, 0.1, num_agents)
+            noise = rng.normal(0, 0.1, num_agents)
             grad = -np.abs(state) * 0.5  # Inverse gradient for explosive growth
             state += -0.1 * grad * dt + noise * np.sqrt(dt)
             free_energy = np.mean(state**2)
@@ -40,7 +41,7 @@ def free_energy_minimization(num_agents, mode, source_code):
     elif mode == 'harmonic' or 'resonate' in source_code:
         # Kuramoto-style synchronization
         for step in range(1000):
-            noise = np.random.normal(0, 0.1, num_agents)
+            noise = rng.normal(0, 0.1, num_agents)
             grad = np.sin(state - np.mean(state))  # Pulls toward the mean phase (resonance)
             state -= 0.5 * grad * dt + noise * np.sqrt(dt)
             if np.var(state) < 0.05: # Coherence achieved
@@ -53,14 +54,10 @@ def free_energy_minimization(num_agents, mode, source_code):
             target = 37.0
         
         for step in range(1000):
-            noise = np.random.normal(0, 0.1, num_agents)
+            noise = rng.normal(0, 0.1, num_agents)
             grad = (state - target)
             state -= 0.1 * grad * dt + noise * np.sqrt(dt)
-            free_energy = np.mean((state - target)**2)
-            
-            if free_energy > pain_threshold and step < 50:
-                pass # Initial high energy is allowed briefly
-            
+
             if np.var(state) < 0.05 and abs(np.mean(state) - target) < 0.5:
                 break
                 

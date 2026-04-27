@@ -47,25 +47,13 @@ python3 interpreter.py path/to/program.frac
 
 ## Example: fibonacci_tree.frac
 ```
-Iterations: 2
-Axiom: A
-Rule: A=F+B
----
-# This will result in a specific pattern of tree movements.
-```
-Wait, for a meaningful program, I'll provide a better "Hello" equivalent.
-To output 'S' (83):
-Axiom: `A`
-Rule: `A=+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++!`
 Iterations: 1
-Result: `83 pluses and an exclamation mark`.
-Actually, L-Systems are more interesting for structure.
-Rule: `A=F++B`
-Iterations: 3
-`A` -> `F++B` -> `F++B` (Wait, rules apply to characters).
-Rule: `F=F+`
-Axiom: `F!`
-Iter 1: `F+!`
-Iter 2: `F++!`
-...
-This allows exponential growth of commands!
+Axiom: A [ F +++ B - ] F ++ !
+Rule: A=+++++++++++++++++++++++++++
+---
+# Outputs 'S' (ASCII 83)
+```
+
+After one growth pass, `A` expands into 27 feed operations. The execution phase
+then loops 27 times, adding three units to a child node, adds two more, and
+outputs `27 * 3 + 2 = 83`.

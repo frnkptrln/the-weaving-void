@@ -25,7 +25,7 @@ Until measured with the `!` command, variables exist in a state of potential. Me
 
 - **EQUAL**: $\Delta B = \Delta A$
 - **OPPOSITE**: $\Delta B = -\Delta A$
-- **DOUBLE**: $\Delta B = 2 \times \Delta A$
+- **DOUBLE**: The first variable is primary. Changes to it apply double delta to its partner; changes to the partner apply integer half delta back to the primary.
 
 ## Usage
 
@@ -37,24 +37,8 @@ python3 interpreter.py path/to/program.ent
 ## Example: bell_state_logic.ent
 ```entanglement
 | (Alice, Bob)   # Create pair
-~ (Alice, Bob, DOUBLE) # Bob = 2 * Alice
-+ (Alice, 33)    # Alice = 33, Bob = 66
-! (Alice)        # Outputs '!' (33)
-! (Bob)          # Outputs 'B' (66)
+~ (Alice, Bob, DOUBLE)
++ (Alice, 40)    # Alice = 40, Bob = 80
++ (Bob, 1)       # Bob = 81, Alice remains 40
+! (Bob)          # Outputs 'Q' (81)
 ```
-Wait, 66 is 'B'. 33 is '!'.
-If I want 'E' (69):
-Alice = 33, Bob = 66.
-+ Alice 1. Alice=34, Bob=68.
-Wait, `DOUBLE` means $\Delta B = 2 \Delta A$.
-So if Alice starts at 0, and I add 34. Bob becomes 68.
-Then I add 1 to Bob? No, only changes to the *primary* affect the *secondary*?
-Actually, in Entanglement, any change to either should affect the other.
-If Bob = 2 * Alice, then Alice = Bob / 2.
-If I add 1 to Bob, Alice increases by 0.5? We should use integers.
-Let's define rules for integers:
-- `EQUAL`: `B += dA`, `A += dB`
-- `OPPOSITE`: `B -= dA`, `A -= dB`
-- `DOUBLE`: `B += 2*dA`, `A += dB // 2`
-
-I'll stick to these.

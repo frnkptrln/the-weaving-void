@@ -59,6 +59,8 @@ class MandelMemoryInterpreter:
                 start = loop_stack.pop()
                 loop_map[start] = i
                 loop_map[i] = start
+        if loop_stack:
+            raise SyntaxError(f"Unmatched '[' at position {loop_stack[-1]}")
         return loop_map
 
     def check_stability(self):
@@ -95,9 +97,8 @@ class MandelMemoryInterpreter:
                 if self.memory.get(z_key, 0) > 0:
                     pc = self.loop_map[pc]
             elif cmd_type == '?':
-                # Separate loop marker as per spec "while value > 0"
-                # If '?' is used as a standalone loop marker like BF '['
-                pass 
+                if self.memory.get(z_key, 0) <= 0:
+                    pc += 1
             
             pc += 1
 

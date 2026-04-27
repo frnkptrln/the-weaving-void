@@ -59,8 +59,11 @@ class DistaffInterpreter:
             raise SyntaxError("Unmatched '[' at position " + str(loop_stack.pop()))
         return loop_map
 
-    def open_cell(self): pass
-    def close_cell(self): pass
+    def open_cell(self):
+        return None
+
+    def close_cell(self):
+        return None
     
     def sharpen(self):
         self.tape[self.ptr] = (self.tape[self.ptr] + 1) % 256
@@ -94,22 +97,18 @@ class DistaffInterpreter:
             cmd = self.commands[pc]
             
             if cmd == '[':
-                # Loop start logic: if current cell is 0, jump to matching ]
-                # But spec says [ <Draft> _ denotes conditional loop.
-                # Actually, standard BF logic is [ jump if 0, ] jump back if not 0.
                 if self.tape[self.ptr] == 0:
                     pc = self.loop_map[pc]
             elif cmd == ']':
                 if self.tape[self.ptr] != 0:
                     pc = self.loop_map[pc]
             elif cmd == '_':
-                # Pause/Condition - can be a no-op if [ and ] handle the jumps
-                pass
+                pc += 1
+                continue
             elif cmd in self.drafts:
                 self.drafts[cmd]()
             else:
-                # Should not happen with current parser
-                pass
+                raise SyntaxError(f"Unknown token: {cmd}")
             
             pc += 1
 
