@@ -50,3 +50,8 @@ T(0.1)
 
 The example uses stable transforms that return to known coordinates:
 `T(0)` keeps the pointer at `0`, and `T(-0.01)` maps `0.1` back to `0`.
+
+## Example: digits.mdm
+`examples/digits.mdm` prints `0123456789` by parking two memory cells on a
+stable two-point orbit: `T(-0.75)` maps `0.5` to `-0.5` and `T(0.25)` maps
+`-0.5` back to `0.5`, so the loop can hop between counter and digit cell.

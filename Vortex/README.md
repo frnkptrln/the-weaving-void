@@ -39,3 +39,8 @@ A compact fragment from the full "Hello, World!" example:
 # ... and so on
 ```
 Run `examples/hello.vtx` for the complete program.
+
+## Example: alphabet.vtx
+`examples/alphabet.vtx` prints the full alphabet from a single loop: the
+letter cell is built by multiplication (`5 * 13 = 65`), then printed and
+incremented 26 times.

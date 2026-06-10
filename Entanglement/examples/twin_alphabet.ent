@@ -1,0 +1,22 @@
+# Entanglement Example: Output 'AaBbCc'
+# Two EQUAL-linked twins stay exactly 32 apart, so incrementing
+# the upper twin drags the lower twin along.
+# Measurement collapses the link, so every loop pass re-entangles.
+
+| (upper, lower)
++ (lower, 32)
+~ (upper, lower, EQUAL)
+
+# Raise both twins at once: upper = 65 'A', lower = 97 'a'
++ (upper, 65)
+
+# Loop counter
++ (count, 3)
+
+? (count) [
+  ! (upper)              # measure: prints and collapses the link
+  ! (lower)
+  ~ (upper, lower, EQUAL) # re-entangle the collapsed pair
+  + (upper, 1)            # both twins advance together
+  - (count, 1)
+]

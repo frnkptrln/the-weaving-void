@@ -1,0 +1,8 @@
+Iterations: 5
+Axiom: X
+Rule: X=F[+X]F[-X]X
+---
+# A silent seed: it computes nothing and prints nothing.
+# All feeds hide inside branch clusters, so execution skips
+# them and halts cleanly. Its purpose is to be looked at:
+#   python3 visualizer.py examples/botanical_sketch.frac

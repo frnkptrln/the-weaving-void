@@ -1,0 +1,36 @@
+# weave_countdown.dstf
+# This woven sequence counts down: it outputs "54321".
+
+# Initialize C0 = 5
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+
+# Loop: C1 += 10, C0 -= 1  ->  C1 = 50
+[ c-d-e-f _
+  # Move Right
+  c-e-g-C
+
+  # Add 10
+  g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+  g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+
+  # Move Left and Subtract 1
+  C-g-e-c
+  C-b-a-g
+_ f-e-d-c ]
+
+# Refill the counter: C0 = 5
+g-a-b-C g-a-b-C g-a-b-C g-a-b-C g-a-b-C
+
+# Tune C1 from 50 to 53 ('5')
+c-e-g-C
+g-a-b-C g-a-b-C g-a-b-C
+C-g-e-c
+
+# Countdown loop: speak the digit, lower it, lower the counter
+[ c-d-e-f _
+  c-e-g-C
+  d-f-a-c
+  C-b-a-g
+  C-g-e-c
+  C-b-a-g
+_ f-e-d-c ]

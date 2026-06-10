@@ -64,3 +64,7 @@ quote
 Marginalia is Turing-complete by the usual tape-and-loop construction: `note`,
 `doubt`, `left`, `right`, `while`, and `again` can encode Brainfuck-style
 computation, while `fold` and `verify` give the language its own character.
+
+`examples/countdown_verified.mrg` shows this at work: evidence is folded
+into a count of ten, spoken digit by digit, and the exhausted margin must
+pass `verify 0` before the program may announce liftoff.

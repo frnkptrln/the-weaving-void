@@ -45,6 +45,14 @@ Rule: <char>=<string>
 python3 interpreter.py path/to/program.frac
 ```
 
+### Run the Visualizer
+```bash
+python3 visualizer.py path/to/program.frac
+```
+The visualizer prints the growth stages of the seed and then sketches the
+final generation as a plant: `F` draws a segment, `+`/`-` turn the pen by
+45 degrees, and `[`/`]` branch off and return.
+
 ## Example: fibonacci_tree.frac
 ```
 Iterations: 1
@@ -57,3 +65,14 @@ Rule: A=+++++++++++++++++++++++++++
 After one growth pass, `A` expands into 27 feed operations. The execution phase
 then loops 27 times, adding three units to a child node, adds two more, and
 outputs `27 * 3 + 2 = 83`.
+
+## Example: grow.frac
+Growth does the arithmetic: over two generations `H` expands into 64 feed
+operations (`H -> DDDDDDDD -> 64 +`) and `E` into four. Each letter of the
+output `GROW` blooms on its own node along a branch.
+
+## Example: botanical_sketch.frac
+A silent seed grown purely to be looked at: all feeds hide inside branch
+clusters, so execution skips them and the program halts without output.
+Render it with the visualizer to watch the shrub unfold over five
+generations.

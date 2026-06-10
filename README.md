@@ -27,7 +27,8 @@ Explore the distinct paradigms we've discovered and documented:
 1. **Computational Expressiveness:** Each language is designed around a concrete computational model, whether through tapes, recursive seeds, registers, graph-like state, or continuous simulation.
 2. **Robust Interpreters:** Interpreters are written cleanly in Python 3.10+, featuring clear error handling and distinct tokenization.
 3. **Comprehensive Documentation:** Each language has its own detailed `README.md` containing syntax diagrams and memory models.
-4. **Verification:** Every language includes at least one proof-of-concept example, and the archive includes a smoke test for those examples.
+4. **Verification:** Every language includes a proof-of-concept example plus a loop-driven program that actually computes (countdowns, alphabets, factorials), and the archive includes a smoke test for all of them.
+5. **Visualization:** Distaff, MandelMemory, SFract, and Bloom ship a `visualizer.py` that renders programs as staff notation, Mandelbrot maps, botanical sketches, or coherence trajectories.
 
 ## Getting Started
 

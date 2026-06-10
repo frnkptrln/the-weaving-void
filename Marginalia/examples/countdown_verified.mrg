@@ -1,0 +1,44 @@
+# Marginalia: a verified countdown.
+# Evidence is gathered, folded into a count, spoken aloud,
+# and the exhausted margin is verified before liftoff.
+
+note 7
+note 3
+fold            # the margin now holds exactly 10
+
+while
+  echo          # speak the current count
+  right
+  note 32
+  quote         # a breath between numbers
+  forget
+  left
+  doubt 1       # one step closer to zero
+again
+
+verify 0        # the count must be exhausted
+
+right 2
+note 108
+quote
+forget
+note 105
+quote
+forget
+note 102
+quote
+forget
+note 116
+quote
+forget
+note 111
+quote
+forget
+note 102
+quote
+forget
+note 102
+quote
+forget
+note 10
+quote

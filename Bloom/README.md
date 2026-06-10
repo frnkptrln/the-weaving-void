@@ -33,4 +33,14 @@ The output of a Bloom program is never just simple text. A successful run proves
 - **Morphospace Snapshot**
 - `"Status: emergent intelligence detected (non-maximizing)"`
 
+### Watching the substrate
+
+```bash
+python3 visualizer.py examples/hello_emergence.blm
+```
+
+The visualizer re-runs the substrate deterministically (same seed, same
+dynamics) and charts the Δ-Coherence trajectory over Δ-time as ASCII — a
+rising curve for converging runs, an `X` where a veto halts the substrate.
+
 Discover the true nature of intelligence by defining constraints, not instructions.

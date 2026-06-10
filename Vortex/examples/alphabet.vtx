@@ -1,0 +1,12 @@
+# Vortex Alphabet
+# Logic: C1 = 5 * 13 = 65 ('A'), then loop 26 times:
+# print C1, increment C1, decrement counter C0.
+
+# C1 = 65 via multiplication
+^^^^^ ⟪ > ^^^^^^^^^^^^^ < v ⟫
+
+# C0 = 26 (loop counter)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+# Print 'A' through 'Z'
+⟪ > ! ^ < v ⟫

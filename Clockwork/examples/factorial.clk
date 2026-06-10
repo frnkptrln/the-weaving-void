@@ -1,0 +1,42 @@
+# Clockwork Factorial: compute 5! by nested gear trains.
+# Cog 0: n, Cog 1: accumulator, Cog 2: scratch, Cog 3: inner counter
+
+COG 0
+SET 5
+COG 1
+SET 1
+
+MARK OUTER
+COG 0
+FALL DONE          # stop once n has unwound to zero
+
+# scratch = 0, inner counter = n
+COG 2
+SET 0
+COG 3
+SET 0
+CONNECT 0
+
+MARK INNER
+COG 3
+FALL INNER_DONE
+COG 2
+CONNECT 1          # scratch += accumulator
+COG 3
+UNWIND
+SPRING INNER
+
+MARK INNER_DONE
+COG 1              # accumulator = scratch  (acc * n)
+SET 0
+CONNECT 2
+COG 0
+UNWIND             # n -= 1
+SPRING OUTER
+
+MARK DONE
+COG 1
+RING               # 120
+COG 4
+SET 10
+CHIME

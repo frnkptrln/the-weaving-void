@@ -1,0 +1,29 @@
+# MandelMemory Example: Output the decimal digits "0123456789"
+# Two stable orbit points serve as memory cells:
+#   counter at z = 0.5, digit at z = -0.5
+# Static jumps between them:
+#   0.5 -> -0.5 via T(-0.75)   (0.25 - 0.75 = -0.5)
+#  -0.5 ->  0.5 via T(0.25)    (0.25 + 0.25 =  0.5)
+
+# counter = 10 at z = 0.5
+T(0.5)
+++++++++++
+
+# digit = 48 ('0') at z = -0.5
+T(-0.75)
+++++++++++++
+++++++++++++
+++++++++++++
+++++++++++++
+
+# back to the counter
+T(0.25)
+
+# while counter > 0: print digit, digit += 1, counter -= 1
+[
+  T(-0.75)
+  !
+  +
+  T(0.25)
+  -
+]

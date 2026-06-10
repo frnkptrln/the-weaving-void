@@ -34,3 +34,8 @@ python3 interpreter.py path/to/recipe.gstr
 
 ## Example: hello_world.gstr
 Refer to `examples/hello_world.gstr` for a complete "Hello World" recipe outputting standard ASCII text.
+
+## Example: counting_soup.gstr
+A two-course recipe that outputs `0123456789`: the first simmer multiplies
+`6 * 8 = 48` into the digit bowl (`'0'`), the second simmer tastes and
+sweetens the bowl ten times.

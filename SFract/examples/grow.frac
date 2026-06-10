@@ -1,0 +1,12 @@
+Iterations: 2
+Axiom: HE+++!FHEEEE++!FHEEE+++!FHEEEEE+++!
+Rule: H=DDDDDDDD
+Rule: D=++++++++
+Rule: E=++++
+---
+# S-Fract Program: Output 'GROW'
+# Growth does the arithmetic: H expands to 64 feeds over two
+# generations (H -> 8 D -> 64 +), E expands to 4 feeds.
+# Each letter blooms on its own node along a branch:
+#   G = 64 + 4 + 3 = 71, R = 64 + 16 + 2 = 82,
+#   O = 64 + 12 + 3 = 79, W = 64 + 20 + 3 = 87

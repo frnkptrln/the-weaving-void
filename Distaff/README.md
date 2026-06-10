@@ -63,3 +63,8 @@ _ f-e-d-c ]
 c-e-g-C
 d-f-a-c
 ```
+
+## Example: weave_countdown.dstf
+This weave counts down audibly and outputs `54321`: the first loop
+multiplies `5 * 10 + 3` into the digit cell (`'5'`), then a second loop
+speaks each digit while lowering both the digit and the counter.

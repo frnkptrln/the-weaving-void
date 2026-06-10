@@ -53,6 +53,11 @@ def main():
             "A",
         ),
         (
+            "Vortex alphabet",
+            ["Vortex/interpreter.py", "Vortex/examples/alphabet.vtx"],
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+        ),
+        (
             "Distaff A",
             ["Distaff/interpreter.py", "Distaff/examples/weave_A.dstf"],
             "A",
@@ -63,9 +68,19 @@ def main():
             "Void",
         ),
         (
+            "Distaff countdown",
+            ["Distaff/interpreter.py", "Distaff/examples/weave_countdown.dstf"],
+            "54321",
+        ),
+        (
             "Entanglement bell",
             ["Entanglement/interpreter.py", "Entanglement/examples/bell_state_logic.ent"],
             "Q",
+        ),
+        (
+            "Entanglement twins",
+            ["Entanglement/interpreter.py", "Entanglement/examples/twin_alphabet.ent"],
+            "AaBbCc",
         ),
         (
             "Gastronomy hello",
@@ -73,9 +88,19 @@ def main():
             "Hello World!\n",
         ),
         (
+            "Gastronomy counting soup",
+            ["Gastronomy/interpreter.py", "Gastronomy/examples/counting_soup.gstr"],
+            "0123456789",
+        ),
+        (
             "Clockwork fibonacci",
             ["Clockwork/interpreter.py", "Clockwork/examples/fibonacci.clk"],
             "0 1 1 2 3 5 8 13 21 34 \n",
+        ),
+        (
+            "Clockwork factorial",
+            ["Clockwork/interpreter.py", "Clockwork/examples/factorial.clk"],
+            "120\n",
         ),
         (
             "MandelMemory M",
@@ -83,19 +108,60 @@ def main():
             "M",
         ),
         (
+            "MandelMemory digits",
+            ["MandelMemory/interpreter.py", "MandelMemory/examples/digits.mdm"],
+            "0123456789",
+        ),
+        (
             "SFract S",
             ["SFract/interpreter.py", "SFract/examples/fibonacci_tree.frac"],
             "S",
+        ),
+        (
+            "SFract grow",
+            ["SFract/interpreter.py", "SFract/examples/grow.frac"],
+            "GROW",
+        ),
+        (
+            "SFract botanical sketch (silent)",
+            ["SFract/interpreter.py", "SFract/examples/botanical_sketch.frac"],
+            "",
         ),
         (
             "Marginalia self portrait",
             ["Marginalia/interpreter.py", "Marginalia/examples/self_portrait.mrg"],
             "Codex: I read, fold, verify.\n",
         ),
+        (
+            "Marginalia countdown",
+            ["Marginalia/interpreter.py", "Marginalia/examples/countdown_verified.mrg"],
+            "10 9 8 7 6 5 4 3 2 1 liftoff\n",
+        ),
     ]
 
     for name, args, expected in exact_cases:
         expect_exact(name, args, expected)
+
+    visualizer_cases = [
+        (
+            "Distaff visualizer",
+            ["Distaff/visualizer.py", "Distaff/examples/weave_void.dstf"],
+            ["C |-"],
+        ),
+        (
+            "MandelMemory visualizer",
+            ["MandelMemory/visualizer.py", "MandelMemory/examples/hello_mdm.mdm"],
+            ["MandelMemory Map"],
+        ),
+        (
+            "SFract visualizer",
+            ["SFract/visualizer.py", "SFract/examples/botanical_sketch.frac"],
+            ["SFract Growth Stages", "Botanical Sketch", "@"],
+        ),
+    ]
+
+    for name, args, expected_parts in visualizer_cases:
+        expect_contains(name, args, expected_parts)
 
     bloom_success = ["Status: emergent intelligence detected (non-maximizing)"]
     for filename in [
@@ -113,6 +179,18 @@ def main():
     expect_contains(
         "Bloom paperclip veto",
         ["Bloom/interpreter.py", "Bloom/examples/paperclip_veto.blm"],
+        ["STATUS: Veto triggered (unbounded_growth). Substrate halted."],
+    )
+
+    expect_contains(
+        "Bloom visualizer",
+        ["Bloom/visualizer.py", "Bloom/examples/hello_emergence.blm"],
+        ["Δ-Coherence Trajectory", *bloom_success],
+    )
+
+    expect_contains(
+        "Bloom visualizer veto",
+        ["Bloom/visualizer.py", "Bloom/examples/paperclip_veto.blm"],
         ["STATUS: Veto triggered (unbounded_growth). Substrate halted."],
     )
 

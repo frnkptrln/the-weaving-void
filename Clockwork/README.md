@@ -38,4 +38,6 @@ SET 101
 CHIME
 # ... etc
 ```
-See `examples/` for more complex demonstrations, including nested loops and register mathematics.
+See `examples/` for more complex demonstrations: `fibonacci.clk` rings the
+first ten Fibonacci numbers, and `factorial.clk` computes `5! = 120` with
+nested gear trains (multiplication by repeated `CONNECT`).

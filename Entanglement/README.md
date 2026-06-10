@@ -42,3 +42,8 @@ python3 interpreter.py path/to/program.ent
 + (Bob, 1)       # Bob = 81, Alice remains 40
 ! (Bob)          # Outputs 'Q' (81)
 ```
+
+## Example: twin_alphabet.ent
+Outputs `AaBbCc`. Two EQUAL-linked twins are held exactly 32 apart, so a
+single increment advances both letters at once. Because measurement
+collapses the link, the loop re-entangles the pair on every pass.
