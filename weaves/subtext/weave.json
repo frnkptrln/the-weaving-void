@@ -1,0 +1,23 @@
+{
+  "name": "subtext-sentence-initials-v1",
+  "version": 1,
+  "loom": "Marginalia",
+  "sentence_split": "terminal-punctuation",
+  "operand_encoding": {
+    "kind": "octet-words-plus-tail",
+    "description": "8 * word_count + final_word_length"
+  },
+  "operations": {
+    "N": { "opcode": "note", "operand": true },
+    "D": { "opcode": "doubt", "operand": true },
+    "R": { "opcode": "right", "operand": true },
+    "L": { "opcode": "left", "operand": true },
+    "F": { "opcode": "fold", "operand": false },
+    "X": { "opcode": "forget", "operand": false },
+    "Q": { "opcode": "quote", "operand": false },
+    "E": { "opcode": "echo", "operand": false },
+    "V": { "opcode": "verify", "operand": true },
+    "W": { "opcode": "while", "operand": false },
+    "A": { "opcode": "again", "operand": false }
+  }
+}
