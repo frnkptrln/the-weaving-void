@@ -194,6 +194,12 @@ def main():
         ["STATUS: Veto triggered (unbounded_growth). Substrate halted."],
     )
 
+    expect_contains(
+        "Subtext mutation tests",
+        ["-m", "unittest", "-v", "weaves.subtext.test_reader"],
+        ["Ran 7 tests", "OK"],
+    )
+
 
 if __name__ == "__main__":
     try:
@@ -201,3 +207,4 @@ if __name__ == "__main__":
     except AssertionError as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
         sys.exit(1)
+
