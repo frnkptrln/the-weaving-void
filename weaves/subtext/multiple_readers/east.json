@@ -1,0 +1,18 @@
+{
+  "name": "subtext-crossroads-east-v1",
+  "version": 1,
+  "loom": "Marginalia",
+  "sentence_split": "terminal-punctuation",
+  "operand_encoding": {
+    "kind": "octet-words-plus-tail",
+    "description": "8 * word_count + final_word_length"
+  },
+  "operations": {
+    "L": { "opcode": "left", "operand": true },
+    "N": { "opcode": "note", "operand": true },
+    "R": { "opcode": "right", "operand": true },
+    "T": { "opcode": "right", "operand": true },
+    "Q": { "opcode": "quote", "operand": false },
+    "C": { "opcode": "forget", "operand": false }
+  }
+}

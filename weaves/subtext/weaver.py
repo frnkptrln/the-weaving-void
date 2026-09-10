@@ -163,9 +163,11 @@ def main() -> int:
         profile = json.loads(args.weave.read_text(encoding="utf-8"))
         surface = weave_thread(source, bank, profile)
         if args.output:
-            if args.output.resolve() in {
-                args.thread.resolve(), args.bank.resolve(), args.weave.resolve()
-            }:
+            if any(
+                args.output.resolve() == path.resolve()
+                or (args.output.exists() and args.output.samefile(path))
+                for path in (args.thread, args.bank, args.weave)
+            ):
                 raise ConstructionError("output must not overwrite a construction input")
             args.output.write_text(surface, encoding="utf-8")
         else:

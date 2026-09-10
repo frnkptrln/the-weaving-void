@@ -30,3 +30,21 @@ arbitrary candidate combinations remain meaningful. A request fails when the
 bank has no unused sentence for an instruction. Extending coverage requires
 authoring and checking more candidates. The bank encodes a small set of
 choices, not a general solution to construction from meaning or trace.
+
+## Edit and repair the story
+
+`draft.md` changes the first final word from `spaces` to `paths`, leaving its
+ten-word sentence one letter short of the desired operand. The authoring
+checker identifies `note 85` where the target requires `note 86`. The repair
+tool restores the committed carrier with one sentence replacement, selected
+by minimum word-token distance from the bank:
+
+```bash
+python3 -m weaves.subtext.authoring check weaves/subtext/construction/target.mrg weaves/subtext/construction/draft.md
+python3 -m weaves.subtext.authoring repair weaves/subtext/construction/target.mrg weaves/subtext/construction/draft.md --bank weaves/subtext/construction/sentences.json
+```
+
+The first command deliberately exits 1 for the mismatch. The second writes the
+repaired carrier to stdout and the edit explanation to stderr. See the
+[authoring guide](../AUTHORING.md) for planning, structured diagnostics, and
+the limits of repair from authored candidates.

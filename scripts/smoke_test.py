@@ -195,8 +195,8 @@ def main():
     )
 
     expect_contains(
-        "Subtext reader and construction tests",
-        ["-m", "unittest", "-v", "weaves.subtext.test_reader", "weaves.subtext.test_weaver"],
+        "Subtext reader, authoring, repair, and multiple-reader tests",
+        ["-m", "unittest", "discover", "-v", "-s", "weaves/subtext", "-t", "."],
         ["OK"],
     )
 

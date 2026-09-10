@@ -340,6 +340,16 @@ class SubtextWeaverCliTests(unittest.TestCase):
                 self.assertIn("Subtext construction error:", result.stderr)
                 self.assertEqual(destination.read_bytes(), original)
 
+    def test_output_cannot_overwrite_an_input_through_a_hard_link(self):
+        destination = self.directory / "linked-output.md"
+        destination.hardlink_to(self.target)
+        original = self.target.read_bytes()
+        result = self.run_cli("--output", destination)
+        self.assertEqual(result.returncode, 1)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("Subtext construction error:", result.stderr)
+        self.assertEqual(self.target.read_bytes(), original)
+
 
 if __name__ == "__main__":
     unittest.main()

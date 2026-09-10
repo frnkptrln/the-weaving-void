@@ -1,0 +1,11 @@
+Neighbors gathered beside the empty lot to imagine shared paths.
+Questions about shade and water shaped the first drawing.
+X marked the place where a gate could welcome everyone.
+Nobody wanted the garden to belong to one planner.
+Quiet voices changed the plan as much as confident ones.
+X moved when a neighbor showed where the ground flooded.
+Neighbors tested each route before agreeing on placement.
+Questions remained about who would tend the beds in winter.
+X stayed in pencil while those responsibilities were discussed.
+Nobody mistook the finished drawing for living soil.
+Quiet work would have to turn the plan into a garden.

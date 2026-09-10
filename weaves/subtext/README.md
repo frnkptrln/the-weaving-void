@@ -86,8 +86,21 @@ story, and expected trace. Tests check exact reconstruction, alternate bank
 ordering, thread/trace equivalence, and construction failures:
 
 ```bash
-python3 -m unittest weaves.subtext.test_reader weaves.subtext.test_weaver
+python3 -m unittest discover -s weaves/subtext -t .
 ```
+
+## Write, inspect, and repair
+
+The [authoring workflow](AUTHORING.md) extends construction beyond selecting
+an entire surface from a bank. It describes sentence shapes for each target
+instruction, compares a draft with that target, and proposes a repair that
+minimizes sentence edits within supplied candidates. The committed garden
+draft demonstrates a one-word structural mutation and its repair.
+
+The [multiple-reader specimen](multiple_readers) asks a complementary question:
+how can one unchanged surface carry two executable threads? Two public
+profiles route the same story through different Marginalia margins, producing
+`GO` and `NO`.
 
 ## Epistemic boundary
 

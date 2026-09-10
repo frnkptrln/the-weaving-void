@@ -86,6 +86,25 @@ program from a desired trace, generate prose from an intended meaning, or
 establish that every bank ordering preserves coherence. The author supplies
 the meaning; the tool checks the executable constraints.
 
+The authoring workflow now exposes those constraints before a sentence bank
+exists, diagnoses structural differences in a draft, and proposes repairs
+from supplied sentences. Minimal repair means a minimum number of sentence
+edits, with word-token distance as a tie-breaker. It is not a measurement of
+preserved meaning. Construction and repair remain conditional on authored
+material and a known target thread.
+
+### One surface, two readers
+
+`weaves/subtext/multiple_readers` holds a single crossroads story with two
+public reader profiles. They differ in the direction extracted from one
+sentence initial, selecting different prepared memory margins. The resulting
+threads emit `GO` and `NO`. The difference is in routing through the loom,
+while the surface, operand rule, and output operation remain the same.
+
+This is a concrete witness that a surface alone need not select one executable
+reading. Both readers are supplied and tested; the experiment does not recover
+an unknown reader from a trace or establish that either reading is privileged.
+
 ## Archive as a set of studies
 
 The existing languages remain useful, but their role is now clearer:
@@ -106,7 +125,7 @@ added only when they test a new property of surfaces, readers, looms, or traces.
 ## Next questions
 
 - Which edits preserve the human reading, the executable reading, or both?
-- Can several readers extract different valid threads from one surface?
+- How far can readers disagree while both threads and the shared surface remain usable?
 - How much executable constraint can prose carry before readability collapses?
 - Can a weaver construct or repair a carrier for a desired trace?
 - Given only a surface and trace, which reader/runtime pairs remain plausible?
