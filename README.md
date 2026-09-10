@@ -18,6 +18,13 @@ an executable thread.
 - **[Subtext](weaves/subtext)** is the first canonical specimen: ordinary prose
   deterministically compiles to a Marginalia program and leaves the trace
   `VOID`.
+- **[Constructing Subtext](weaves/subtext/construction)** takes a first bounded
+  step in the inverse direction: select authored sentences for a target thread.
+  A second surface tells a garden story while carrying the same `VOID` program.
+- **[Authoring Subtext](weaves/subtext/AUTHORING.md)** plans sentence shapes,
+  diagnoses a draft, and proposes repairs using authored candidates.
+- **[Multiple readers](weaves/subtext/multiple_readers)** gives one crossroads
+  story two public readings, yielding `GO` or `NO` through different routing.
 - **[Marginalia](Marginalia)** is the first canonical loom, a language of notes,
   doubt, folding, and verification.
 
@@ -41,6 +48,32 @@ The carrier, public reader profile, extracted thread, expected trace, and
 mutation tests are all committed together. The specimen uses visible sentence
 features only; it is an experiment in dual reading, not secrecy or
 cryptography.
+
+## Construct another surface
+
+```bash
+python3 -m weaves.subtext.weaver weaves/subtext/construction/target.mrg --bank weaves/subtext/construction/sentences.json
+python3 -m unittest discover -s weaves/subtext -t .
+```
+
+The weaver chooses the first unused sentence that encodes each target
+instruction, then verifies the complete extraction. The ordered bank contains
+human-authored alternatives. Changing its order can change the surface without
+changing the thread. This is finite sentence selection; it does not generate
+meaning or solve construction for arbitrary programs or traces.
+
+To write a carrier yourself, the authoring workflow gives constraints before
+you need a sentence bank, then diagnoses your draft:
+
+```bash
+python3 -m weaves.subtext.authoring plan weaves/subtext/construction/target.mrg
+python3 -m weaves.subtext.authoring check weaves/subtext/construction/target.mrg weaves/subtext/construction/draft.md
+```
+
+The supplied draft intentionally differs by one final word; `check` exits 1
+and explains the changed operand. See the [authoring guide](weaves/subtext/AUTHORING.md)
+for repair, structured reports, and the distinction between minimal sentence
+changes and preserving human meaning.
 
 ## The archive
 
