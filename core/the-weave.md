@@ -72,6 +72,20 @@ Subtext is deliberately a weave profile rather than a tenth virtual machine.
 It tests whether an existing language can inhabit a second, human-readable
 surface.
 
+### A bounded inverse experiment
+
+`weaves/subtext/construction` adds a second surface for the same thread and
+trace. A deterministic weaver selects one authored sentence per instruction
+from an ordered bank, consumes each selected entry once, and checks that the
+result extracts to the requested thread. A missing candidate is an explicit
+construction failure.
+
+This demonstrates construction within a finite supplied vocabulary and
+non-uniqueness of surface for a fixed reader and thread. It does not infer a
+program from a desired trace, generate prose from an intended meaning, or
+establish that every bank ordering preserves coherence. The author supplies
+the meaning; the tool checks the executable constraints.
+
 ## Archive as a set of studies
 
 The existing languages remain useful, but their role is now clearer:

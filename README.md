@@ -18,6 +18,9 @@ an executable thread.
 - **[Subtext](weaves/subtext)** is the first canonical specimen: ordinary prose
   deterministically compiles to a Marginalia program and leaves the trace
   `VOID`.
+- **[Constructing Subtext](weaves/subtext/construction)** takes a first bounded
+  step in the inverse direction: select authored sentences for a target thread.
+  A second surface tells a garden story while carrying the same `VOID` program.
 - **[Marginalia](Marginalia)** is the first canonical loom, a language of notes,
   doubt, folding, and verification.
 
@@ -41,6 +44,19 @@ The carrier, public reader profile, extracted thread, expected trace, and
 mutation tests are all committed together. The specimen uses visible sentence
 features only; it is an experiment in dual reading, not secrecy or
 cryptography.
+
+## Construct another surface
+
+```bash
+python3 -m weaves.subtext.weaver weaves/subtext/construction/target.mrg --bank weaves/subtext/construction/sentences.json
+python3 -m unittest weaves.subtext.test_reader weaves.subtext.test_weaver
+```
+
+The weaver chooses the first unused sentence that encodes each target
+instruction, then verifies the complete extraction. The ordered bank contains
+human-authored alternatives. Changing its order can change the surface without
+changing the thread. This is finite sentence selection; it does not generate
+meaning or solve construction for arbitrary programs or traces.
 
 ## The archive
 

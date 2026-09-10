@@ -195,9 +195,9 @@ def main():
     )
 
     expect_contains(
-        "Subtext mutation tests",
-        ["-m", "unittest", "-v", "weaves.subtext.test_reader"],
-        ["Ran 7 tests", "OK"],
+        "Subtext reader and construction tests",
+        ["-m", "unittest", "-v", "weaves.subtext.test_reader", "weaves.subtext.test_weaver"],
+        ["OK"],
     )
 
 
@@ -207,4 +207,3 @@ if __name__ == "__main__":
     except AssertionError as exc:
         print(f"FAIL: {exc}", file=sys.stderr)
         sys.exit(1)
-
