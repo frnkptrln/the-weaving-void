@@ -25,6 +25,8 @@ an executable thread.
   diagnoses a draft, and proposes repairs using authored candidates.
 - **[Multiple readers](weaves/subtext/multiple_readers)** gives one crossroads
   story two public readings, yielding `GO` or `NO` through different routing.
+- **[Joint construction](weaves/subtext/JOINT.md)** selects one surface against several
+  target programs at once, with a reproducible selection witness.
 - **[Marginalia](Marginalia)** is the first canonical loom, a language of notes,
   doubt, folding, and verification.
 

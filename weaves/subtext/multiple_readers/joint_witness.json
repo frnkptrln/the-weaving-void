@@ -1,0 +1,49 @@
+{
+  "surface": "Lanterns outlast darkness.\nNearer the western keeper waits beyond the lantern.\nReturning across the river takes another lifetime.\nNearby the eastern keeper folds her hands in prayer.\nListening alters distance.\nTurning divides pathways.\nQuestions wait where certainty once stood.\nCertainty does not remember who taught it to speak.\nNeither keeper knows which voice will cross the silence.\nQuietly, we leave the lantern burning for whoever comes next.\n",
+  "readers": [
+    "east",
+    "west"
+  ],
+  "selected_bank_entries": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "available_at_selection": [
+    4,
+    2,
+    2,
+    2,
+    3,
+    2,
+    4,
+    2,
+    2,
+    3
+  ],
+  "assignment_count": 9216,
+  "unused_bank_entries": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "incompatible_bank_entries": [],
+  "programs": {
+    "east": "left 32\nnote 71\nright 64\nnote 78\nleft 32\nright 32\nquote\nforget\nnote 79\nquote\n",
+    "west": "left 32\nnote 71\nright 64\nnote 78\nleft 32\nleft 32\nquote\nforget\nnote 79\nquote\n"
+  }
+}
