@@ -22,3 +22,4 @@ jobs:
       - run: python -m pip install -r Bloom/requirements.txt
       # The smoke command also runs every Subtext unittest, including test_joint.
       - run: python scripts/smoke_test.py
+      - run: python -m weaves.subtext.explorer --check
