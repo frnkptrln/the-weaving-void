@@ -66,8 +66,19 @@ class MarginaliaInterpreter:
                 f"Line {line_number}: '{op}' requires an integer argument"
             ) from exc
 
-    def run(self):
+    def run(self, *, max_steps=None, on_step=None):
+        """Execute, optionally emitting detached snapshots after each instruction.
+
+        Existing unbounded execution is unchanged. A caller can bound a trace
+        without duplicating the language's execution rules in another runtime.
+        """
+        if max_steps is not None and (type(max_steps) is not int or max_steps < 0):
+            raise ValueError("max_steps must be a non-negative integer or None")
+        steps = 0
         while self.pc < len(self.instructions):
+            if max_steps is not None and steps >= max_steps:
+                raise RuntimeError(f"execution exceeded {max_steps} steps")
+            executed = self.pc
             op, args, line_number = self.instructions[self.pc]
 
             if op == "note":
@@ -117,6 +128,10 @@ class MarginaliaInterpreter:
                 raise SyntaxError(f"Line {line_number}: unknown command '{op}'")
 
             self.pc += 1
+            steps += 1
+            if on_step is not None:
+                on_step({"executed": executed, "next": self.pc, "pointer": self.ptr,
+                         "margins": {str(k): list(v) for k, v in sorted(self.margins.items())}})
 
 
 def main():

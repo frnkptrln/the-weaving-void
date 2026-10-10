@@ -13,6 +13,12 @@ an executable thread.
 
 ## Start here
 
+- **[The crossing — a reading room](reading-room.html)** is a self-contained
+  browser entrance: open the downloaded HTML file, switch between the two
+  public readers, and step through sentences, memory and output. Whitespace
+  reflow and a one-letter revision make the rule's limits visible. The page
+  replays six traces from the actual Python runtime; it is not a second
+  interpreter or an arbitrary-prose editor. No server or network is needed.
 - **[The Weave](core/the-weave.md)** defines the operational spine and the
   boundary of the project.
 - **[Subtext](weaves/subtext)** is the first canonical specimen: ordinary prose
@@ -39,6 +45,20 @@ human meaning and a desired program or trace, construct a surface that carries
 both.
 
 ## Reproduce the first weave
+
+Rebuild or check the reading room and its embedded witnesses from the existing
+crossroads specimen:
+
+```bash
+python3 -m weaves.subtext.explorer
+python3 -m weaves.subtext.explorer --check
+python3 -m unittest weaves.subtext.test_explorer
+```
+
+The downloadable witness contains the exact surface, profile, extracted
+program, execution snapshots and SHA-256 provenance. The existing authored
+surface and profiles are unchanged. Variant hashes distinguish a modified
+surface from its source; hashes do not authenticate authorship.
 
 ```bash
 python3 weaves/subtext/reader.py weaves/subtext/carrier.md --explain
