@@ -165,4 +165,4 @@ python3 scripts/smoke_test.py
 
 The interpreters, compilers, scripts and tests — the Python files — are released under the MIT License ([LICENSE](LICENSE)).
 
-Everything else is released under CC BY-NC 4.0 ([LICENSES/CC-BY-NC-4.0.txt](LICENSES/CC-BY-NC-4.0.txt)): the weaves, the example programs, the reading room and the texts. A weave is prose and program at once; the MIT License does not cover it. © 2026 Frank Peterlein.
+Everything else is released under CC BY-NC 4.0 ([LICENSES/CC-BY-NC-4.0.txt](LICENSES/CC-BY-NC-4.0.txt)): the weaves, the example programs, the reading room and the texts. A weave is prose and program at once; the MIT License does not cover it. The Python files stay MIT wherever they sit, including the tools in `weaves/`. © 2026 Frank Peterlein.
